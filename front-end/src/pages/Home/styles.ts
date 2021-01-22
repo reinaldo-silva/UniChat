@@ -21,6 +21,7 @@ export const Conatiner = styled.div`
   }
 `;
 
+/* Menu Lateral ============================= */
 export const MenuLateral = styled.div`
   width: 100%;
   height: calc(100vh - 55px);
@@ -38,25 +39,15 @@ export const MenuLateral = styled.div`
   }
 `;
 
-export const BodyMensagens = styled.div`
-  width: 100%;
-  height: calc(100vh - 55px);
-  margin-top: 55px;
-
-  header {
-    width: 75%;
-    margin-left: 25%;
-  }
-`;
-
 export const ListaChats = styled.div`
   overflow-x: auto;
-  padding: 30px 40px;
-  height: 100%;
+  padding: 30px 0px 30px 40px;
+  height: calc(100vh - 55px);
+  width: 100%;
 
   .selected {
-    background: #fff;
-    border-radius: 4px;
+    background: #f6f6f6;
+    border-radius: 8px 0px 0px 8px;
     color: #1f1f1f;
   }
 
@@ -76,13 +67,108 @@ export const ListaChats = styled.div`
     transition: 0.2s;
 
     :hover {
-      background: #fff;
-      border-radius: 4px;
+      background: #f6f6f6;
+      border-radius: 8px 0px 0px 8px;
       color: #1f1f1f;
     }
   }
 `;
 
+/* Body mensagens =====================================*/
+export const BodyMensagens = styled.div`
+  width: 100%;
+  height: calc(100vh - 55px);
+  margin-top: 55px;
+
+  header {
+    width: 75%;
+    margin-left: 25%;
+  }
+`;
+
+/* Lista de mensagens ===================================== */
+export const Messages = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+
+  section {
+    min-height: calc(100vh - 110px);
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 55px;
+    overflow-y: scroll;
+  }
+`;
+
+/* Card Message */
+export const MessageCard = styled.div`
+  width: 100%;
+  height: auto;
+  padding: 10px 20px;
+`;
+
+export const UserDataMessage = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 100%;
+  height: auto;
+  margin: 0px;
+  flex-direction: row;
+  margin-bottom: 8px;
+  overflow-y: hidden;
+
+  h4 {
+    color: #f68420;
+    margin-right: 8px;
+  }
+
+  span {
+    font-size: 8px;
+  }
+`;
+
+export const Text = styled.div`
+  width: 100%;
+  height: auto;
+`;
+
+/* input Text message =========================================== */
+export const IputColor = styled.div`
+  padding: 0px 20px 15px;
+  width: 100%;
+  height: 55px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+`;
+
+export const InputText = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  background: #e4e4e4;
+  border-radius: 4px;
+  padding: 10px;
+
+  input {
+    width: 90%;
+    height: 100%;
+    border: none;
+    background: #e4e4e4;
+    padding: 0 16px;
+    font-weight: 500;
+  }
+`;
+
+/* Icones ======================================== */
 export const LogOut = styled(BiLogOut)`
   width: 30px;
   height: 30px;
@@ -94,90 +180,11 @@ export const LogOut = styled(BiLogOut)`
 `;
 
 export const Send = styled(BiSend)`
-  width: 10%;
+  width: 30px;
   height: 100%;
-  color: #f0f0f0;
+  color: #0069ab;
 
   :hover {
     opacity: 0.8;
   }
-`;
-
-export const Messages = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  position: relative;
-
-  section {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    margin-bottom: 70px;
-  }
-`;
-
-export const InputText = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  background: #c0c0c0;
-  border-radius: 4px;
-  padding: 10px;
-
-  input {
-    width: 90%;
-    height: 100%;
-    border: none;
-    background: #c0c0c0;
-    padding: 0 16px;
-    font-weight: 500;
-  }
-`;
-
-export const IputColor = styled.div`
-  padding: 15px 20px;
-  width: 100%;
-  height: 70px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-`;
-
-export const MessageCard = styled.div`
-  width: 100%;
-  height: auto;
-  padding: 10px 20px;
-
-  section {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    width: 100%;
-    height: auto;
-    margin: 0px;
-    flex-direction: row;
-    margin-bottom: 8px;
-
-    h4 {
-      color: #f68420;
-      margin-right: 8px;
-    }
-
-    span {
-      font-size: 8px;
-    }
-  }
-`;
-
-export const Text = styled.div`
-  width: 100%;
-  height: auto;
 `;

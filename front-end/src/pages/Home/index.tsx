@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { IputColor, MessageCard, Text } from "./styles";
+import { IputColor, MessageCard, Text, UserDataMessage } from "./styles";
 import {
   BodyMensagens,
   Conatiner,
@@ -34,7 +34,7 @@ const Home = () => {
       </MenuLateral>
       <BodyMensagens>
         <header>
-          <h1>Sistemas de Infomação</h1>
+          <h1>Sistemas de Informação</h1>
           <Link to="/">
             <LogOut />
           </Link>
@@ -42,34 +42,199 @@ const Home = () => {
         <Messages>
           <section>
             <MessageCard>
-              <section>
+              <UserDataMessage>
                 <h4>Reinaldo</h4>
                 <span>Hoje ás 20:32</span>
-              </section>
+              </UserDataMessage>
               <Text>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Praesent eget.
               </Text>
             </MessageCard>
             <MessageCard>
-              <section>
+              <UserDataMessage>
                 <h4>Reinaldo</h4>
                 <span>Hoje ás 20:32</span>
-              </section>
+              </UserDataMessage>
               <Text>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Praesent eget.
               </Text>
             </MessageCard>
             <MessageCard>
-              <section>
+              <UserDataMessage>
                 <h4>Reinaldo</h4>
                 <span>Hoje ás 20:32</span>
-              </section>
+              </UserDataMessage>
               <Text>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Praesent eget.
               </Text>
+            </MessageCard>
+            <MessageCard>
+              <UserDataMessage>
+                <h4>Reinaldo</h4>
+                <span>Hoje ás 20:32</span>
+              </UserDataMessage>
+              <Text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Praesent eget.
+              </Text>
+            </MessageCard>
+            <MessageCard>
+              <UserDataMessage>
+                <h4>Reinaldo</h4>
+                <span>Hoje ás 20:32</span>
+              </UserDataMessage>
+              <Text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Praesent eget.
+              </Text>
+            </MessageCard>
+            <MessageCard>
+              <UserDataMessage>
+                <h4>Reinaldo</h4>
+                <span>Hoje ás 20:32</span>
+              </UserDataMessage>
+              <Text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Praesent eget.
+              </Text>
+            </MessageCard>
+            <MessageCard>
+              <UserDataMessage>
+                <h4>Reinaldo</h4>
+                <span>Hoje ás 20:32</span>
+              </UserDataMessage>
+              <Text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Praesent eget.
+              </Text>
+            </MessageCard>
+            <MessageCard>
+              <UserDataMessage>
+                <h4>Reinaldo</h4>
+                <span>Hoje ás 20:32</span>
+              </UserDataMessage>
+              <Text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Praesent eget.
+              </Text>
+            </MessageCard>
+            <MessageCard>
+              <UserDataMessage>
+                <h4>Reinaldo</h4>
+                <span>Hoje ás 20:32</span>
+              </UserDataMessage>
+              <Text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Praesent eget.
+              </Text>
+            </MessageCard>
+            <MessageCard>
+              <UserDataMessage>
+                <h4>Reinaldo</h4>
+                <span>Hoje ás 20:32</span>
+              </UserDataMessage>
+              <Text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Praesent eget.
+              </Text>
+            </MessageCard>
+            <MessageCard>
+              <UserDataMessage>
+                <h4>Reinaldo</h4>
+                <span>Hoje ás 20:32</span>
+              </UserDataMessage>
+              <Text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Praesent eget.
+              </Text>
+            </MessageCard>
+            <MessageCard>
+              <UserDataMessage>
+                <h4>Reinaldo</h4>
+                <span>Hoje ás 20:32</span>
+              </UserDataMessage>
+              <Text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Praesent eget.
+              </Text>
+            </MessageCard>
+            <MessageCard>
+              <UserDataMessage>
+                <h4>Reinaldo</h4>
+                <span>Hoje ás 20:32</span>
+              </UserDataMessage>
+              <Text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Praesent eget.
+              </Text>
+            </MessageCard>
+            <MessageCard>
+              <UserDataMessage>
+                <h4>Reinaldo</h4>
+                <span>Hoje ás 20:32</span>
+              </UserDataMessage>
+              <Text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Praesent eget.
+              </Text>
+            </MessageCard>
+            <MessageCard>
+              <UserDataMessage>
+                <h4>Reinaldo</h4>
+                <span>Hoje ás 20:32</span>
+              </UserDataMessage>
+              <Text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Praesent eget.
+              </Text>
+            </MessageCard>
+            <MessageCard>
+              <UserDataMessage>
+                <h4>Reinaldo</h4>
+                <span>Hoje ás 20:32</span>
+              </UserDataMessage>
+              <Text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Praesent eget.
+              </Text>
+            </MessageCard>
+            <MessageCard>
+              <UserDataMessage>
+                <h4>Reinaldo</h4>
+                <span>Hoje ás 20:32</span>
+              </UserDataMessage>
+              <Text>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</Text>
+            </MessageCard>
+            <MessageCard>
+              <UserDataMessage>
+                <h4>Reinaldo</h4>
+                <span>Hoje ás 20:32</span>
+              </UserDataMessage>
+              <Text>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</Text>
+            </MessageCard>
+            <MessageCard>
+              <UserDataMessage>
+                <h4>Reinaldo</h4>
+                <span>Hoje ás 20:32</span>
+              </UserDataMessage>
+              <Text>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</Text>
+            </MessageCard>
+            <MessageCard>
+              <UserDataMessage>
+                <h4>Reinaldo</h4>
+                <span>Hoje ás 20:32</span>
+              </UserDataMessage>
+              <Text>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</Text>
+            </MessageCard>
+            <MessageCard>
+              <UserDataMessage>
+                <h4>Reinaldo</h4>
+                <span>Hoje ás 20:32</span>
+              </UserDataMessage>
+              <Text>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</Text>
             </MessageCard>
           </section>
           <IputColor>
