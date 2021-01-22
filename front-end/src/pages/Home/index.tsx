@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { IputColor, MessageCard } from "./styles";
+import { IputColor, MessageCard, Text } from "./styles";
 import {
   BodyMensagens,
   Conatiner,
@@ -41,7 +41,36 @@ const Home = () => {
         </header>
         <Messages>
           <section>
-            <MessageCard></MessageCard>
+            <MessageCard>
+              <section>
+                <h4>Reinaldo</h4>
+                <span>Hoje ás 20:32</span>
+              </section>
+              <Text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Praesent eget.
+              </Text>
+            </MessageCard>
+            <MessageCard>
+              <section>
+                <h4>Reinaldo</h4>
+                <span>Hoje ás 20:32</span>
+              </section>
+              <Text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Praesent eget.
+              </Text>
+            </MessageCard>
+            <MessageCard>
+              <section>
+                <h4>Reinaldo</h4>
+                <span>Hoje ás 20:32</span>
+              </section>
+              <Text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Praesent eget.
+              </Text>
+            </MessageCard>
           </section>
           <IputColor>
             <InputText>

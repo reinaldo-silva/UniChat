@@ -9,34 +9,50 @@ export const Conatiner = styled.div`
   background: #f6f6f6;
 
   header {
-    height: 9vh;
-    width: 100%;
+    height: 55px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.25);
     padding: 0px 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 `;
 
 export const MenuLateral = styled.div`
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 55px);
   background: #0069ab;
   left: 0;
+  margin-top: 55px;
 
   h1 {
     color: #ebebeb;
+  }
+
+  header {
+    width: 25%;
+    background: #0069ab;
   }
 `;
 
 export const BodyMensagens = styled.div`
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 55px);
+  margin-top: 55px;
+
+  header {
+    width: 75%;
+    margin-left: 25%;
+  }
 `;
 
 export const ListaChats = styled.div`
+  overflow-x: auto;
   padding: 30px 40px;
+  height: 100%;
 
   .selected {
     background: #fff;
@@ -57,6 +73,13 @@ export const ListaChats = styled.div`
     padding: 16px;
     color: #ebebeb;
     margin-bottom: 4px;
+    transition: 0.2s;
+
+    :hover {
+      background: #fff;
+      border-radius: 4px;
+      color: #1f1f1f;
+    }
   }
 `;
 
@@ -82,15 +105,21 @@ export const Send = styled(BiSend)`
 
 export const Messages = styled.div`
   width: 100%;
-  height: 91vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
 
   section {
-    height: 88%;
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    margin-bottom: 70px;
   }
 `;
 
@@ -114,13 +143,41 @@ export const InputText = styled.div`
 `;
 
 export const IputColor = styled.div`
-  padding: 20px 30px 30px;
+  padding: 15px 20px;
   width: 100%;
-  height: 12%;
+  height: 70px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 `;
 
 export const MessageCard = styled.div`
   width: 100%;
-  min-height: 60px;
-  background-color: #c36746;
+  height: auto;
+  padding: 10px 20px;
+
+  section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    width: 100%;
+    height: auto;
+    margin: 0px;
+    flex-direction: row;
+    margin-bottom: 8px;
+
+    h4 {
+      color: #f68420;
+      margin-right: 8px;
+    }
+
+    span {
+      font-size: 8px;
+    }
+  }
+`;
+
+export const Text = styled.div`
+  width: 100%;
+  height: auto;
 `;
