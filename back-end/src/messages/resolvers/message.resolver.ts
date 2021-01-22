@@ -1,3 +1,4 @@
+import { Injectable } from '@nestjs/common';
 import {
   Args,
   Mutation,
@@ -7,46 +8,53 @@ import {
   Resolver,
   Subscription,
 } from '@nestjs/graphql';
+import { InjectRepository } from '@nestjs/typeorm';
 import { PubSub } from 'graphql-subscriptions';
-import User from '../db/models/user.entity';
-import Message from '../db/models/message.entity';
-import RepoService from '../repo.service';
-import MessageInput, { DeleteMessageInput } from './input/message.input';
+import UserResolver from 'src/users/resolvers/user.resolver';
+import { Repository } from 'typeorm';
+import User from '../../users/entities/user.entity';
+import Message from '../entities/message.entity';
+import MessageInput, { DeleteMessageInput } from './message.input';
 
 export const pubSub = new PubSub();
 
 @Resolver(() => Message)
+@Injectable()
 export default class MessageResolver {
-  constructor(private readonly repoService: RepoService) {}
+  constructor(
+    @InjectRepository(Message)
+    private readonly messageRepository: Repository<Message>,
+    private readonly userResolver: UserResolver,
+  ) {}
 
   @Query(() => [Message])
   public async getMessages(): Promise<Message[]> {
-    return this.repoService.messageRepo.find();
+    return this.messageRepository.find();
   }
   @Query(() => [Message], { nullable: true })
   public async getMessageFromUser(
     @Args('userId') userId: number,
   ): Promise<Message[]> {
-    return this.repoService.messageRepo.find({
+    return this.messageRepository.find({
       where: { userId },
     });
   }
 
   @Query(() => Message, { nullable: true })
   public async getMessage(@Args('id') id: number): Promise<Message> {
-    return this.repoService.messageRepo.findOne(id);
+    return this.messageRepository.findOne(id);
   }
 
   @Mutation(() => Message)
   public async createMessage(
     @Args('data') input: MessageInput,
   ): Promise<Message> {
-    const message = this.repoService.messageRepo.create({
+    const message = this.messageRepository.create({
       userId: input.userId,
       content: input.content,
     });
 
-    const response = await this.repoService.messageRepo.save(message);
+    const response = await this.messageRepository.save(message);
 
     pubSub.publish('messageAdded', {
       messageAdded: message,
@@ -59,7 +67,7 @@ export default class MessageResolver {
   public async deleteMessage(
     @Args('data') input: DeleteMessageInput,
   ): Promise<Message> {
-    const message = await this.repoService.messageRepo.findOne(input.id);
+    const message = await this.messageRepository.findOne(input.id);
 
     if (!message || message.userId !== input.userId)
       throw new Error(
@@ -68,7 +76,7 @@ export default class MessageResolver {
 
     const copy = { ...message };
 
-    await this.repoService.messageRepo.remove(message);
+    await this.messageRepository.remove(message);
 
     return copy;
   }
@@ -80,6 +88,6 @@ export default class MessageResolver {
 
   @ResolveField(() => User, { name: 'user' })
   public async getUser(@Parent() parent: Message): Promise<User> {
-    return this.repoService.userRepo.findOne(parent.userId);
+    return this.userResolver.getUser(parent.userId);
   }
 }
