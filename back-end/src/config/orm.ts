@@ -11,4 +11,4 @@ const options: TypeOrmModuleOptions = {
   migrations: [path.resolve(__dirname, '..', 'db', 'migrations', '*')],
 };
 
-module.exports = options;
+export default options;
