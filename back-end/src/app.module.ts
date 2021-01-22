@@ -8,6 +8,10 @@ import ormOptions from './config/orm';
 import UserResolver from './resolvers/user.resolver';
 import MessageResolver from './resolvers/message.resolver';
 import { GraphQLModule } from '@nestjs/graphql';
+import { UserModule } from './user/user.module';
+import { MessagesModule } from './messages/messages.module';
+import { UsersModule } from './users/users.module';
+import { UsersNoSpecService } from './users--no-spec/users--no-spec.service';
 
 const gqlImports = [UserResolver, MessageResolver];
 
@@ -21,8 +25,11 @@ const gqlImports = [UserResolver, MessageResolver];
       playground: true,
       installSubscriptionHandlers: true,
     }),
+    UserModule,
+    MessagesModule,
+    UsersModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, UsersNoSpecService],
 })
 export class AppModule {}
