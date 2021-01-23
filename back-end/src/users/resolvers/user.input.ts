@@ -10,7 +10,16 @@ export class UserInput {
 }
 
 @InputType()
-export class DeleteUser {
+export class UserDelete {
   @Field()
   readonly ra: string;
+}
+
+@InputType()
+export class UserLogin {
+  @Field()
+  readonly ra: string;
+
+  @Field()
+  readonly password: string;
 }
