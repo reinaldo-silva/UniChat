@@ -17,10 +17,11 @@ import Message from './entities/message.entity';
 @WebSocketGateway({ transports: ['websocket'] })
 export class MessagesGateway
   implements OnGatewayConnection, OnGatewayDisconnect {
+  private readonly logger: Logger;
+
   constructor(
     @InjectRepository(Message)
     private readonly messagesRepository: Repository<Message>,
-    private readonly logger: Logger,
   ) {
     this.logger = new Logger(MessagesGateway.name);
   }
