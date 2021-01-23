@@ -3,7 +3,7 @@ import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import User from '../entities/user.entity';
-import UserInput from './user.input';
+import { UserInput } from './user.input';
 
 @Resolver(() => User)
 @Injectable()
@@ -22,22 +22,23 @@ export default class UserResolver {
     return this.userRepository.findOne(id);
   }
 
-  // @Mutation(() => User)
-  // public async createOrLoginUser(
-  //   @Args('data') input: UserInput,
-  // ): Promise<User> {
-  //   let user = await this.userRepository.findOne({
-  //     where: { email: input.email.toLowerCase().trim() },
-  //   });
+  @Mutation(() => User)
+  public async createOrLoginUser(
+    @Args('data') input: UserInput,
+  ): Promise<User> {
+    let user = await this.userRepository.findOne({
+      where: { ra: input.ra.toLowerCase().trim() },
+    });
 
-  //   if (!user) {
-  //     user = this.userRepository.create({
-  //       email: input.email.toLowerCase().trim(),
-  //     });
+    if (!user) {
+      user = this.userRepository.create({
+        ra: input.ra.toLowerCase().trim(),
+        password: input.password.trim(),
+      });
 
-  //     await this.userRepository.save(user);
-  //   }
+      await this.userRepository.save(user);
+    }
 
-  //   return user;
-  // }
+    return user;
+  }
 }
