@@ -22,7 +22,8 @@ services:
     ports:
       - 3333:3333
     volumes:
-      - .:/back-end
+      - ./back-end:/var/www/back-end:cached
+    command: yarn start:dev
 
   front-end:
     depends_on:
@@ -31,7 +32,7 @@ services:
     build:
       context: ./front-end
     volumes:
-      - .:/front-end
+      - ./front-end:/var/www/front-end:cached
     ports:
       - 3000:3000
     
