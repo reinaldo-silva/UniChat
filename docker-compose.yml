@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  postgres:
+    container_name: unichat-postgres
+    image: postgres:alpine
+    environment:
+      POSTGRES_PASSWORD: unichat
+    restart: on-failure
+    ports:
+      - 5432:5432
+
+  back-end:
+    restart: on-failure
+    depends_on: 
+      - postgres
+    container_name: unichat-backend
+    build: ./back-end
+    image: node:12.16-alpine
+    links:
+      - postgres:postgres
+    ports:
+      - 3333:3333
+    volumes:
+      - .:/back-end
+
+  front-end:
+    depends_on:
+      - back-end
+    container_name: unichat-frontend
+    build:
+      context: ./front-end
+    volumes:
+      - .:/front-end
+    ports:
+      - 3000:3000
+    
