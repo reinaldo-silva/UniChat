@@ -6,6 +6,7 @@ services:
     image: postgres:alpine
     environment:
       POSTGRES_PASSWORD: unichat
+      POSTGRES_DB: unichat
     restart: on-failure
     ports:
       - 5432:5432
