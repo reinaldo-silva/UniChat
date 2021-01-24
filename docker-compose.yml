@@ -16,13 +16,13 @@ services:
       - postgres
     container_name: unichat-backend
     build: ./back-end
-    image: node:12.16-alpine
     links:
       - postgres:postgres
     ports:
       - 3333:3333
     volumes:
       - ./back-end:/var/www/back-end:cached
+      - ./back-end/node_modules
     command: yarn start:dev
 
   front-end:
@@ -33,6 +33,7 @@ services:
       context: ./front-end
     volumes:
       - ./front-end:/var/www/front-end:cached
+      - ./front-end/node_modules
     ports:
       - 3000:3000
     
