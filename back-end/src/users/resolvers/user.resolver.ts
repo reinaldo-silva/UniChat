@@ -8,7 +8,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import User from '../entities/user.entity';
 import HashProvider from '../provider/hash.provider';
-import { UserInput, UserLogin } from './user.input';
+import UserInput, { UserLogin } from './user.input';
 
 @Resolver(() => User)
 @Injectable()
@@ -42,6 +42,7 @@ export default class UserResolver {
     const createdUser = this.userRepository.create({
       ra: input.ra.toLowerCase().trim(),
       password: hash,
+      name: input.name.trim(),
     });
 
     await this.userRepository.save(createdUser);
@@ -54,7 +55,7 @@ export default class UserResolver {
       where: { ra: input.ra.toLowerCase().trim() },
     });
 
-    if (!user) {
+    if (!user.ra) {
       throw new NotFoundException('Incorrect login or password!');
     }
     const compare = await this.hashProvider.compare(

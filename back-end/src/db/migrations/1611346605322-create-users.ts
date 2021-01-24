@@ -1,6 +1,6 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-export class createUsers1611346605322 implements MigrationInterface {
+export class createUsers1611420390007 implements MigrationInterface {
   private table = new Table({
     name: 'users',
     columns: [

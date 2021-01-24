@@ -9,6 +9,6 @@ export default class HashProvider {
   }
 
   async compare(password: string, hashedPassword: string): Promise<boolean> {
-    return this.compare(password, hashedPassword);
+    return bcrypt.compare(password, hashedPassword);
   }
 }

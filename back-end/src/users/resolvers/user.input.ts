@@ -1,12 +1,15 @@
 import { Field, InputType } from '@nestjs/graphql';
 
 @InputType()
-export class UserInput {
+export default class UserInput {
   @Field()
   readonly ra: string;
 
   @Field()
   readonly password: string;
+
+  @Field()
+  readonly name: string;
 }
 
 @InputType()
