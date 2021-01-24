@@ -9,10 +9,14 @@ const Login = () => {
       <main>
         <section id="data-user">
           <h1>UniChat</h1>
+          <h1>Login</h1>
           <input type="text" placeholder="R.A. ex: 2015232795" />
           <input type="text" placeholder="* * * * * * *" />
           <Link to="/home">
             <button>Entrar</button>
+          </Link>
+          <Link to="/create-acount">
+            <span>Criar conta</span>
           </Link>
         </section>
         <section id="img-login">

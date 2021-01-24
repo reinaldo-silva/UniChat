@@ -42,25 +42,27 @@ export const Conatiner = styled.div`
         border: none;
         border-radius: 4px;
         text-align: center;
+        letter-spacing: 2px;
+      }
+
+      button {
+        width: 70%;
+        height: 40px;
+        border: none;
+        border-radius: 4px;
+        background: #f68420;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: #fff;
+
+        :hover {
+          opacity: 0.8;
+        }
       }
 
       a {
         width: 70%;
         height: 40px;
-        button {
-          width: 100%;
-          height: 100%;
-          border: none;
-          border-radius: 4px;
-          background: #f68420;
-          text-transform: uppercase;
-          font-weight: bold;
-          color: #fff;
-
-          :hover {
-            opacity: 0.8;
-          }
-        }
         span {
           width: 100%;
           height: 100%;
@@ -74,6 +76,7 @@ export const Conatiner = styled.div`
           :hover {
             opacity: 0.8;
           }
+        }
       }
     }
 
